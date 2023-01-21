@@ -27,7 +27,7 @@ const Hero = () => {
                                 util.Alert("error", "Invalid meeting code")
                             }
                             else{
-                                a.href = `http://127.0.0.1:5173/meeting-space${code}`
+                                a.href = `https://meet-n-greet.netlify.app/meeting-space/${code}`
                                 a.target = "_blank"
                                 a.click()
                             }                              

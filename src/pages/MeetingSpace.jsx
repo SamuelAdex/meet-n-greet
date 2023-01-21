@@ -11,7 +11,7 @@ const MeetingSpace = () => {
     let isValidId = id.split("-");
     if (isValidId.length !== 3) {
         util.Alert("error", "The meeting id is invalid")
-        return window.location = "/"
+        return window.location = "https://meet-n-greet.netlify.app"
     }
 
     useEffect(() => {
@@ -74,7 +74,7 @@ const MeetingSpace = () => {
                 HIDE_DEEP_LINKING_LOGO: true,
                 NATIVE_APP_NAME: 'MEET-n-GREET',
                 DEFAULT_BACKGROUND: '#06141D',
-                JITSI_WATERMARK_LINK: "https://github.com/Benrobo/e-workflow-client",
+                JITSI_WATERMARK_LINK: "https://github.com/SamuelAdex/meet-n-greet",
                 SHOW_CHROME_EXTENSION_BANNER: false,
                 VIDEO_QUALITY_LABEL_DISABLED: true,
                 SETTINGS_SECTIONS: ['devices', 'moderator', 'profile', 'sounds'],
@@ -88,7 +88,7 @@ const MeetingSpace = () => {
         })
 
         function handleClose() {
-            window.location = '/'
+            window.location = 'https://meet-n-greet.netlify.app/'
         }
     }
 

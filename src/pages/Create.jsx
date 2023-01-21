@@ -39,7 +39,7 @@ const Create = () => {
 
 const MeetingComponent = ({id}) => {
     const [isLoading, setIsLoading] = useState(true);
-    let link = `http://127.0.0.1:5173/meeting-space/${id}`;
+    let link = `https://meet-n-greet.netlify.app/meeting-space/${id}`;
 
     setTimeout(() => setIsLoading(false), 5000);
 
