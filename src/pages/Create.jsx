@@ -25,8 +25,8 @@ const Create = () => {
   return (
     <Section>
         <Header /> 
-        {loading && <div>
-            
+        {loading && <div className="spinner-container">
+            <div className="spinner"></div>
         </div>}
         {!loading && <div className="create-wrapper">            
             <button className="get-link" onClick={createMeeting}>GENERATE LINK</button>
@@ -83,21 +83,49 @@ const MeetingComponent = ({id}) => {
 export default Create
 
 const Section = styled.section`
-    height: 100vh;
+    height: 70vh;
+    
+    .spinner-container{
+        display: grid;
+        place-items: center;
+        padding: 12px;
+        height: 100vh;
+
+        .spinner{
+            padding: 35px;
+            border-radius: 100%;
+            border: 7px solid whitesmoke;
+            border-top: 7px solid #000;
+            animation: loader .8s infinite linear;
+        }
+
+        @keyframes loader{
+            to{
+                transform: rotate(0deg)                    
+            }
+            from{
+                transform: rotate(360deg)
+            }
+        }
+        
+        
+    }
     .create-wrapper{
         display: grid;
         place-items: center;
         min-height: 50%;
+        margin-top: 3rem;
 
         .spinner-wrapper{
             display: grid;
             place-items: center;
+            padding: 12px;
 
             .spinner{
                 padding: 35px;
                 border-radius: 100%;
-                border: 7px solid grey;
-                border-top: 5px solid #000;
+                border: 7px solid whitesmoke;
+                border-top: 7px solid #000;
                 animation: loader .8s infinite linear;
             }
 
@@ -166,6 +194,21 @@ const Section = styled.section`
 
             &:active, &:hover{
                 opacity: .8;
+            }
+        }
+
+        @media screen and (max-width: 400px){
+            .meeting-info{
+                h1{
+                    text-align: center;
+                    font-size: 25px;
+                    margin-top: 20px;
+                }
+            }
+            .link-wrapper{
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
             }
         }
     }

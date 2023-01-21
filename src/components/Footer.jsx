@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const year = new Date();
@@ -7,7 +8,7 @@ const Footer = () => {
   return (
     <Section>
         <div className="create">
-            <button>Create Meeting - It's free</button>
+            <Link className="create-meeting" to="/new-meeting">Create Meeting - It's free</Link>
         </div>
         <footer>
             <div className="footer-left">
@@ -28,10 +29,12 @@ const Section = styled.section`
     place-items:center;
     margin-top: 4em;
 
+
     .create{
 
-        button{
+        .create-meeting{
             padding: 20px 40px;
+            text-decoration: none;
             background: #000;
             color: #fff;
             font-weight: bold;
@@ -55,6 +58,15 @@ const Section = styled.section`
             font-size: 16px;
             color: #000;
             font-family: Fantasy;
+        }
+        @media screen and (max-width: 770px){
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+
+            .footer-left, .footer-right{
+                text-align: center;
+            }
         }
     }
 `;

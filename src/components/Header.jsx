@@ -9,8 +9,9 @@ const Header = () => {
     <Section>
         <nav>
             <div className="logo">
-                <AiOutlineVideoCamera size={33} />
-                MEETnGREET
+                <AiOutlineVideoCamera className="mobile" size={50} />
+                <AiOutlineVideoCamera className="desktop" size={33} />
+                <span>MEETnGREET</span>
             </div>
             <div className="menu">
                 <a href="https://www.buymeacoffee.com/adexsamuel" target="_blank">
@@ -44,6 +45,10 @@ const Section = styled.header`
             font-size: 20px;
             font-weight: 900;
             cursor: pointer;
+
+            .mobile{
+                display: none;
+            }
         }
 
         .menu{
@@ -87,5 +92,36 @@ const Section = styled.header`
                 }
             }
         }
+        @media screen and (max-width: 500px){
+            .logo{
+                .mobile{
+                  display: flex;
+                }
+                .desktop{
+                    display: none;
+                }
+                span{
+                    display: none;
+                }
+            }
+        }
+        @media screen and (min-width: 300px) and (max-width: 791px){            
+            .menu{                
+                .new{
+                    display: none;
+                }
+                .donate{
+                    padding: 15px 30px;
+                    font-size: 16px;                    
+                }
+            }
+        }
     }
+    @media screen and (min-width: 300px) and (max-width: 791px){
+        padding: 20px 40px;
+    }
+    @media screen and (max-width: 500px){
+        padding: 20px;
+    }
+
 `;
