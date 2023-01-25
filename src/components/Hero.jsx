@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import {BiSend} from 'react-icons/bi'
 import {AiOutlineVideoCamera} from 'react-icons/ai'
 import {BsCameraReels} from 'react-icons/bs'
-import {Util} from '../helpers/util'
+import { motion } from "framer-motion"
+import {Util} from '../helpers/util';
+
 
 const util = new Util()
 
 const Hero = () => {
     const [code, setCode] = useState("")
+
+    const transition = {duration: 2, type: 'spring', default: { ease: "linear" }}
   return (
     <Section>
         <div className="hero-section">
@@ -37,16 +41,20 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
-            <span className="icon-1">
+            <motion.div className="icon-1"
+                initial={{right: "-66px"}}
+                whileInView={{right: '5px'}}
+                transition={transition}
+            >
                 <AiOutlineVideoCamera size={80} />
-            </span>
-            <span className="icon-2"></span>
-              <span className="icon-3">
-                  
-            </span>
-            <span className="icon-4">
+            </motion.div>            
+            <motion.div className="icon-4"
+                initial={{left: "-66px"}}
+                whileInView={{left: '5px'}}
+                transition={transition}
+            >
                 <BsCameraReels size={80} />
-            </span>
+            </motion.div>
         </div>
     </Section>
   )
@@ -57,6 +65,7 @@ export default Hero
 const Section = styled.section`
     display: grid;
     place-items: center;
+    
 
     .hero-section{
         width: 70%;
@@ -123,7 +132,7 @@ const Section = styled.section`
             }
         }
         position: relative;
-        
+                
         .icon-4{
             position: absolute;
             left: 5px;

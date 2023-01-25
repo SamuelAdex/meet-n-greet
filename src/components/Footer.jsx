@@ -57,7 +57,7 @@ const Section = styled.section`
             font-weight: 500;
             font-size: 16px;
             color: #000;
-            font-family: Fantasy;
+            font-family: sans-serif;
         }
         @media screen and (max-width: 770px){
             flex-direction: column;
